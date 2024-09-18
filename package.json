@@ -1,0 +1,16 @@
+{
+  "name": "contacts-api_bookmarks-api",
+  "version": "1.0.0",
+  "description": "Laboratoire 1",
+  "main": "./Serveur/server.js",
+  "type":"module",
+  "engines": {
+    "node":"16.14.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Marc-Antoine Bouchard et Nicolas Chourot",
+  "license": "ISC"
+}
