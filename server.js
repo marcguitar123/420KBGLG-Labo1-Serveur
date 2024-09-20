@@ -82,6 +82,7 @@ async function handleBookmarksServiceRequest(req, res) {
                             maxId = bookmark.Id;
                     });
                     newBookmark.Id = maxId + 1;
+                    newBookmark.Category = newBookmark.Category.toLowerCase();
                     bookmarks.push(newBookmark);
                     fs.writeFileSync(BookmarksFilePath, JSON.stringify(bookmarks));
                     res.writeHead(201, { 'content-type': 'application/json' });
@@ -108,7 +109,7 @@ async function handleBookmarksServiceRequest(req, res) {
                             if (storedBookmark != null) { //Vérifier si on a trouvé le favori ayant le id spécifié dans la requête.
                                 storedBookmark.Title = modifiedBookmark.Title;
                                 storedBookmark.Url = modifiedBookmark.Url;
-                                storedBookmark.Category = modifiedBookmark.Category;
+                                storedBookmark.Category = modifiedBookmark.Category.toLowerCase();
                                 fs.writeFileSync(BookmarksFilePath, JSON.stringify(bookmarks));
                                 res.writeHead(200);
                                 res.end();
